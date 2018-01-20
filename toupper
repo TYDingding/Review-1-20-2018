@@ -1,0 +1,17 @@
+#include<iostream>
+#include<cstring>
+#include<cctype>
+using namespace std;
+
+void main()
+{
+	char *origion = "you learn c++ VERY HARD\0";
+	char output[30];
+
+	for (int i=0; *origion != '\0'; origion++,i++)
+	{
+		output[i] = toupper(*origion);
+		cout << output[i];
+	}
+
+}
