@@ -1,0 +1,35 @@
+#include<iostream>
+#include<cstring>
+#include<cctype>
+#include<cmath>;
+using namespace std;
+
+/*“you learn c++ VERY HARD" to "You Learn C++ Very Hard"*/
+
+void main()
+{
+	char origion[30] = "you learn c++ VERY HARD";
+	cout << origion << endl;
+
+	origion[0] -= 32;
+
+	for (int i = 1; origion[i]; i++)
+	{
+		if (origion[i - 1] == ' ')
+		{
+			if (origion[i] >= 'a'&&origion[i] <= 'z')
+			{
+				origion[i] -= 32;
+			}
+		}
+		if (origion[i - 1] >= 'A'&&origion[i] <= 'Z')
+		{
+			for (int j = 0; origion[i + j] != ' '&&origion[i + j]; j++)
+			{
+				if (origion[i + j] >= 'A'&&origion[i + j] <= 'Z')
+					origion[i + j] += 32;
+			}
+		}
+	}
+	cout << origion;
+} 
